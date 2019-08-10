@@ -38,10 +38,6 @@
                 "Role": {
 					"Ref":"lambdaIAMRole"
 				},
-                "Code": {
-                    "S3Bucket": { "Ref": "myBucketName" },
-                    "S3Key": "LambdaApp-1.0-SNAPSHOT.jar"
-                },
                 "Description" : "lambda to host webapp",
                 "Environment" : {
                     "Variables": {
