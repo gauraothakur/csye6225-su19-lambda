@@ -24,7 +24,7 @@ fi
 echo "This error confirms that the stack name we gave was unique"
 function=resetPassword
 domainname=$(aws route53 list-hosted-zones --query 'HostedZones[0].Name' --output text)
-domain_name = ${domainname%.}
+domain_name=${domainname%.}
 BucketName=$(aws s3api list-buckets | jq -r '.Buckets[] | select(.Name | startswith("code-deploy")).Name')
 WebAppBucket=$(aws s3api list-buckets | jq -r '.Buckets[] | select(.Name | startswith("csye6225")).Name')
 Lambda_IAMRole=$(aws iam get-role --role-name lambdaIAMRole --query Role.Arn --output text)
